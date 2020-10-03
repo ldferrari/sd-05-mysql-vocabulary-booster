@@ -6,5 +6,5 @@ FROM w3schools.order_details AS od
 INNER JOIN w3schools.products AS pr
 ON od.ProductID = pr.ProductID
 GROUP BY pr.ProductID
-HAVING ROUND(AVG(od.Quantity), 2) >= 20
+HAVING ROUND(AVG(od.Quantity), 2) > 20
 ORDER BY 4, 1;
