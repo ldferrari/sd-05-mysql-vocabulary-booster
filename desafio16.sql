@@ -1,8 +1,13 @@
 DELIMITER $$
-CREATE PROCEDURE buscar_quantidade_de_empregos_por_funcionario(IN email VARCHAR(100)) BEGIN
-SELECT COUNT(jh.EMPLOYEE_ID) AS 'total_empregos' FROM hr.employees AS em
+CREATE FUNCTION buscar_quantidade_de_empregos_por_funcionario(email VARCHAR(100))
+RETURNS INT READS SQL DATA
+BEGIN
+DECLARE total_empregos INT;
+SELECT COUNT(jh.EMPLOYEE_ID) FROM hr.employees AS em
 INNER JOIN hr.job_history as jh
 ON em.EMPLOYEE_ID = jh.EMPLOYEE_ID
-WHERE em.EMAIL = email;
+WHERE em.EMAIL = email
+INTO total_empregos;
+RETURN total_empregos;
 END
 $$ DELIMITER ;
