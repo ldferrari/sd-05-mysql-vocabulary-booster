@@ -6,5 +6,4 @@
 -- Em caso de empate nessa diferença os resultados devem ser ordenados pelo nome do cargo em ordem alfabética.
 
 SELECT JOB_TITLE AS 'Cargo', MAX_SALARY - MIN_SALARY AS 'Diferença entre salários máximo e mínimo'
-FROM hr.jobs
-ORDER BY 'Diferença entre salários máximo e mínimo', 'Cargo';
+FROM hr.jobs;
