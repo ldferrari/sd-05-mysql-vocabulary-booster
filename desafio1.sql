@@ -1,1 +1,3 @@
-select COUNTRY_NAME as País ,  case WHEN REGION_ID = 1 THEN 'incluído' ELSE 'não incluído' END AS 'Status Inclusão'from countries ;
+SELECT COUNTRY_NAME AS País,
+CASE WHEN REGION_ID = 1 THEN 'incluído' ELSE 'não incluído'
+END AS 'Status Inclusão' FROM countries ORDER BY COUNTRY_NAME;
