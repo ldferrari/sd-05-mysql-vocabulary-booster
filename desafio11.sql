@@ -10,7 +10,8 @@
 -- Alex, da Irlanda.
 -- 
 -- Logo, podemos dizer que Maria, João e Gabriela são compatriotas entre si, haja visto que as três pessoas moram no Brasil. Além disso, 
--- podemos dizer que tanto Maria quanto João e Gabriela possuem duas pessoas compatriotas associadas. Já Alex não possui compatriota, haja visto que não há outras pessoas da Irlanda.
+-- podemos dizer que tanto Maria quanto João e Gabriela possuem duas pessoas compatriotas associadas. Já Alex não possui compatriota, haja visto que não há outras pessoas .
+-- da Irlanda.
 -- 
 -- Usando o banco w3schools como referência, monte uma query que exiba três colunas:
 -- 
@@ -21,3 +22,10 @@
 -- A terceira coluna deve possuir o alias "Número de compatriotas" e exibir o número de pessoas que moram no mesmo país.
 -- 
 -- Os resultados devem estar ordenados pelo nome de contato da pessoa cliente em ordem alfabética.
+SELECT
+A.ContactName AS 'Nome',
+A.Country AS `País`,
+(SELECT COUNT(*) - 1 FROM w3schools.customers AS B WHERE B.Country = A.Country) AS `Número de compatriotas`
+FROM w3schools.customers AS A
+HAVING `Número de compatriotas` > 0
+ORDER BY A.ContactName;
