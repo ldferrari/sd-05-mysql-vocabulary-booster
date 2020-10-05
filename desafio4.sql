@@ -11,4 +11,4 @@ FROM hr.employees
 INNER JOIN hr.jobs
 ON employees.JOB_ID = jobs.JOB_ID
 GROUP BY hr.jobs.JOB_ID, hr.employees.JOB_ID
-ORDER BY AVG(SALARY);
+ORDER BY AVG(SALARY), jobs.JOB_TITLE;
