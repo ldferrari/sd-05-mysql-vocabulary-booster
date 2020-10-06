@@ -6,10 +6,6 @@
 -- A segunda coluna deve possuir o alias "Preço" e exibir o preço desse produto.
 -- 
 -- Os resultados devem estar ordenados pelo nome do produto em ordem alfabética.
-select * from w3schools.products;
-
-select * from w3schools.order_details;
-
 SELECT
 ProductName AS 'Produto',
 Price as 'Preço'
