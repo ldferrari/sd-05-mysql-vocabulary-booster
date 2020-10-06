@@ -5,7 +5,6 @@
 -- salários das pessoas empregadas que possuem o cargo em questão.
 -- A terceira coluna deve possuir o alias "Senioridade" e categorizar o nível de
 -- senioridade do cargo com base na média salarial, da seguinte forma:
-
 -- Média salarial entre 2000 - 5800 -> Júnior
 -- Média salarial entre 5801 - 7500 -> Pleno
 -- Média salarial entre 7501 - 10500 -> Sênior
@@ -24,5 +23,5 @@ ELSE 'CEO'
 END AS 'Senioridade'
 FROM hr.employees AS e INNER JOIN hr.jobs AS j
 ON e.JOB_ID = j.JOB_ID
-GROUP BY hr.j.JOB_TITLE
+GROUP BY j.JOB_TITLE
 ORDER BY AVG(SALARY),'Cargo';
