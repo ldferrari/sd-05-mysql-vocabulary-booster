@@ -15,3 +15,11 @@
 -- 
 -- Os resultados devem estar ordenados pelo nome completo das pessoas empregadas em ordem alfabética. Em caso de empate no nome completo, ordene os resultados pelos anos trabalhados 
 -- por ela no cargo em questão, em ordem crescente.
+SELECT
+CONCAT(FIRST_NAME, ' ', LAST_NAME) AS `Nome completo`,
+DATE_FORMAT(START_DATE,'%d/%m/%y') AS 'Data de início',
+DATE_FORMAT(END_DATE,'%d/%m/%y') AS 'Data de rescisão',
+ROUND(TIMESTAMPDIFF(DAY , START_DATE, END_DATE) / 365 , 2) AS `Anos trabalhados`
+FROM hr.job_history AS J, hr.employees AS EM
+WHERE J.EMPLOYEE_ID = EM.EMPLOYEE_ID
+ORDER BY `Nome completo`, `Anos trabalhados`;
