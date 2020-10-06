@@ -5,4 +5,4 @@ SELECT JOB_TITLE as 'Cargo',
         WHEN MAX_SALARY BETWEEN 20001 AND 30000 THEN 'Alto'
 	ELSE 'Altíssimo' 
     END AS 'salário máximo'
-FROM hr.jobs;
+FROM hr.jobs ORDER BY JOB_TITLE ASC;

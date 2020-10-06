@@ -31,7 +31,7 @@ describe('Desafios iniciais', () => {
     sequelize.close();
   });
 
-  describe('Exiba os países e indicando se cada um deles se encontra ou não na região formada pela Europa', () => {
+  describe.only('Exiba os países e indicando se cada um deles se encontra ou não na região formada pela Europa', () => {
     it('Verifica o desafio 1', async () => {
       const challengeQuery = readFileSync('desafio1.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult1');
