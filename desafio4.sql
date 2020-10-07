@@ -10,5 +10,5 @@ END) AS "Senioridade"
 FROM hr.employees AS EM
 INNER JOIN hr.jobs AS JOBS
 ON JOBS.job_id = EM.job_id
-GROUP BY JOBS.job_id, EM.job_id
+GROUP BY Cargo
 ORDER BY `Média salarial`;
