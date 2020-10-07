@@ -8,7 +8,7 @@ COUNT(*)
 FROM
 hr.employees as em, hr.job_history as h
 WHERE em.EMPLOYEE_ID = h.EMPLOYEE_ID AND
-EMAIL = CONCAT(EM, '@example.com') INTO quantidade_de_jobs;
+EMAIL = EM INTO quantidade_de_jobs;
 RETURN quantidade_de_jobs;
 END $$
 DELIMITER ;

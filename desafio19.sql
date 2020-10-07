@@ -12,9 +12,9 @@ hr.employees AS em, hr.job_history as h, hr.jobs as j, hr.departments as d
 WHERE em.EMPLOYEE_ID = h.EMPLOYEE_ID 
 AND h.JOB_ID = j.JOB_ID
 AND h.DEPARTMENT_ID = d.DEPARTMENT_ID 
-AND EMAIL = CONCAT(EM, '@example.com')
+AND EMAIL = EM
 ORDER BY DEPARTMENT_NAME, JOB_TITLE;
 END $$ 
 DELIMITER ;
 
-CALL exibir_historico_completo_por_funcionario('NKOCHHAR')
+CALL exibir_historico_completo_por_funcionario('NKOCHHAR@example.com')
