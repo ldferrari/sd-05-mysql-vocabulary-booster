@@ -24,4 +24,4 @@ WHERE (SELECT COUNT(b.Country)
 FROM w3schools.customers AS b
 WHERE b.Country = a.Country
 ) - 1 > 0
-ORDER BY Nome;
+ORDER BY 1;

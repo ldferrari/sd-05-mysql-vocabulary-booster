@@ -29,4 +29,4 @@ FROM hr.employees as a
 INNER JOIN hr.employees as b
 WHERE a.JOB_ID = b.JOB_ID
 AND a.EMPLOYEE_ID <> b.EMPLOYEE_ID
-ORDER BY CONCAT(a.FIRST_NAME, ' ', a.LAST_NAME), CONCAT(b.FIRST_NAME, ' ', b.LAST_NAME);
+ORDER BY 1, 4;
