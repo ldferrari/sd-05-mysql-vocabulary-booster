@@ -8,4 +8,4 @@ INNER JOIN jobs
 ON jobs.JOB_ID = job_history.JOB_ID
 INNER JOIN departments
 ON departments.DEPARTMENT_ID = job_history.DEPARTMENT_ID
-ORDER BY CONCAT(FIRST_NAME, ' ', LAST_NAME) DESC, Departamento;
+ORDER BY CONCAT(FIRST_NAME, ' ', LAST_NAME) DESC, Cargo;
