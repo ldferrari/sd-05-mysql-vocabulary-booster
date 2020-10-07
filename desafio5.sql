@@ -5,4 +5,4 @@ FROM hr.employees AS E
 INNER JOIN hr.jobs AS J
 ON E.job_id = J.job_id
 GROUP BY J.job_title
-ORDER BY J.max_salary - J.min_salary, J.job_title;
+ORDER BY J.max_salary - J.min_salary ASC, J.job_title ASC;
