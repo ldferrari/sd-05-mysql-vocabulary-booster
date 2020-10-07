@@ -7,6 +7,6 @@ T2.SALARY `Salário funcionário 2`,
 T2.PHONE_NUMBER `Telefone funcionário 2` 
 FROM hr.employees AS T1
 RIGHT JOIN hr.employees AS T2
-ON T1.JOB_ID = t2.JOB_ID
+ON T1.JOB_ID = T2.JOB_ID
 WHERE T1.FIRST_NAME <> T2.FIRST_NAME
 ORDER BY 1, 4; 
