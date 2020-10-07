@@ -8,7 +8,7 @@
 -- Em caso de empate no nome completo, ordene os resultados pela data de início que a pessoa iniciou seu cargo, em ordem crescente.
 
 SELECT UCASE(CONCAT(e.FIRST_NAME,' ',e.LAST_NAME)) AS 'Nome completo', -- Juntando os nomes dos empregados CAIXA ALTA- espaço entre primeiro e último nome: tabela employees
-jh.START_DATE AS 'Data de início do cargo', -- Seleciona data de ínicio: tabela job_history
+jh.START_DATE AS 'Data de início', -- Seleciona data de ínicio: tabela job_history
 SALARY AS 'Salário' -- Seleciona o departamento: tabela departments
 FROM hr.job_history AS jh
 INNER JOIN hr.employees AS e ON jh.EMPLOYEE_ID = e.EMPLOYEE_ID -- Relação job_history com employees
