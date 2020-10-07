@@ -6,6 +6,7 @@ describe('Desafios iniciais', () => {
   let sequelize;
 
   beforeAll(async () => {
+    jest.setTimeout(10000);
     const {
       MYSQL_USER,
       MYSQL_PASSWORD,
