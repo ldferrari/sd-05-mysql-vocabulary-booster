@@ -13,12 +13,8 @@
 -- A terceira coluna deve possuir o alias "Número de compatriotas" e exibir o número de pessoas que moram no mesmo país.
 -- Os resultados devem estar ordenados pelo nome de contato da pessoa cliente em ordem alfabética.
 
-SELECT a2.CustomerName AS 'Nome', a2.Country AS 'País', -- Seleciona o nome do cliente e do país com os ALIAS pedidos
-(
-SELECT COUNT(a1.Country) -- Contabiliza a quantidade de países em que os países são iguais nas duas tabelas
-FROM w3schools.customers AS a1 
-WHERE a1.Country = a2.Country AND a1.CustomerName <> a2.CustomerName -- Desconsidera a própria 'pessoa' - pega só os valores que o nome é diferente
-) AS 'Número de compatriotas'
-FROM w3schools.customers AS a2
-HAVING `Número de compatriotas` > 0 -- Para excluir o caso em que não tem compatriota
+SELECT a2.ContactName AS 'Nome', a2.Country AS 'País', COUNT(a1.Country) AS 'Número de compatriotas'-- Seleciona o nome do cliente e do país com os ALIAS solicitados
+FROM w3schools.customers AS a1, w3schools.customers AS a2
+WHERE a1.Country = a2.Country AND a1.ContactName <> a2.ContactName -- Desconsidera a própria 'pessoa' - pega só os valores em que o nome é diferente
+GROUP BY a2.CustomerID -- Função de agregação OBRIGATÓRIO uso do GROUP BY os valores no COUNT estão modificando o tempo todo o ID é o valor comum das duas tabelas
 ORDER BY `Nome`; -- Ordena pelo nome
