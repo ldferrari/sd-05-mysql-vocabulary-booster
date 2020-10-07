@@ -6,5 +6,5 @@ FROM w3schools.customers AS C
 LEFT JOIN (SELECT C.Country AS Country, (COUNT(C.Country)-1) AS C3 FROM w3schools.customers AS C GROUP BY C.Country) AS C2
 ON C.Country = C2.Country
 GROUP BY C.CustomerName
-HAVING C2.C3 > 0
+HAVING `Número de compatriotas` > 0
 ORDER BY Nome;
