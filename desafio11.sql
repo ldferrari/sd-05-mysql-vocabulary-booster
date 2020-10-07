@@ -5,4 +5,5 @@ a.Country AS 'País',
 FROM w3schools.customers AS a, w3schools.customers AS b -- We have to compare between the same
 WHERE a.Country = b.Country
 GROUP BY a.CustomerID -- To show Count, using the common column
+HAVING `Número de compatriotas` > 0
 ORDER BY a.ContactName;
