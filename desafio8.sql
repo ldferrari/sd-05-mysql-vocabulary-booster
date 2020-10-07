@@ -5,4 +5,4 @@ FROM w3schools.orders AS a
 INNER JOIN w3schools.customers AS b ON a.CustomerID = b.CustomerID
 INNER JOIN w3schools.shippers AS c ON a.ShipperID = c.ShipperID
 WHERE a.ShipperID IN (1, 2)
-ORDER BY b.ContactName, a.OrderDate;
+ORDER BY b.ContactName, c.ShipperName, `Data do pedido`;
