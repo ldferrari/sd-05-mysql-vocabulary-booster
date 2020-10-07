@@ -15,7 +15,8 @@
 -- associada que possui o mesmo cargo (não se esqueça do espaço entre o nome e o sobrenome).
 -- A quinta coluna deve possuir o alias "Salário funcionário 2" e exibir o salário da pessoa funcionária associada que possui o mesmo cargo.
 -- A sexta coluna deve possuir o alias "Telefone funcionário 2" e exibir o número da pessoa funcionária associada que possui o mesmo cargo.
--- Os resultados devem estar ordenados pela coluna "Nome completo funcionário 1" em ordem alfabética. Em caso de empate, os resultados devem ser ordenados pela coluna Nome completo funcionário 2" em ordem alfabética.
+-- Os resultados devem estar ordenados pela coluna "Nome completo funcionário 1" em ordem alfabética.
+-- Em caso de empate, os resultados devem ser ordenados pela coluna Nome completo funcionário 2" em ordem alfabética.
 
 -- Pessoas funcionárias: employees
 -- BD hr
@@ -23,5 +24,5 @@
 SELECT CONCAT(e1.FIRST_NAME, ' ', e1.LAST_NAME) AS 'Nome completo funcionário 1', e1.SALARY AS 'Salário funcionário 1', e1.PHONE_NUMBER AS 'Telefone funcionário 1',
 CONCAT(e2.FIRST_NAME, ' ', e2.LAST_NAME) AS 'Nome completo funcionário 2', e2.SALARY AS 'Salário funcionário 2', e2.PHONE_NUMBER AS 'Telefone funcionário 2'
 FROM hr.employees AS e1, hr.employees AS e2 -- Seleciona a tabela de interesse com os ALIAS corretos
-WHERE e1.EMPLOYEE_ID <> e2.EMPLOYEE_ID -- Para pegar sempre valores únicos
-ORDER BY 1; -- Ordenação pela primeira coluna
+WHERE e1.EMPLOYEE_ID <> e2.EMPLOYEE_ID AND e1.JOB_ID = e2.JOB_ID-- Para pegar sempre valores únicos de funcionários e somente para os funcionários do mesmo cargo
+ORDER BY 1, 4; -- Ordenação pela primeira coluna
