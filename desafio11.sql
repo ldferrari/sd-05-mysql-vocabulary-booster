@@ -25,5 +25,5 @@ SELECT Beavis.ContactName AS 'Nome', Beavis.Country AS 'País',
 FROM w3schools.customers AS Beavis, w3schools.customers AS Butthead
 WHERE Beavis.Country = Butthead.Country
 
-GROUP BY Butthead.ContactName, Butthead.Country HAVING `Número de compatriotas` > 0
-ORDER BY Butthead.ContactName;
+GROUP BY Beavis.ContactName, Beavis.Country HAVING `Número de compatriotas` > 0
+ORDER BY Beavis.ContactName;
