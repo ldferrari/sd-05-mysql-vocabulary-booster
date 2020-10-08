@@ -11,6 +11,6 @@ ROUND(AVG(OD.quantity), 2) AS 'Média'
 FROM w3schools.products AS P
 INNER JOIN w3schools.order_details AS OD
 ON P.productId = OD.productID
--- WHERE ROUND(AVG(OD.quantity), 2) > 20.00
+-- WHERE AVG(OD.quantity) > 20.00
 GROUP BY P.productName
 ORDER BY AVG(OD.quantity), P.productName;
