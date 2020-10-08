@@ -9,7 +9,3 @@ CASE
  AS 'Nível' from hr.jobs AS J
  WHERE J.MAX_SALARY>5000
  ORDER BY Cargo ASC;
-
-select * from hr.jobs AS J;
-
-
