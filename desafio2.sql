@@ -3,7 +3,7 @@ CASE
 WHEN J.MAX_SALARY <= 10000 THEN 'Baixo'
 WHEN J.MAX_SALARY <= 20000 THEN 'Médio'
 WHEN J.MAX_SALARY <= 30000 THEN 'Alto'
-ELSE 'Altí­ssimo'
+ELSE 'Altíssimo'
 END
 AS 'Nível' from hr.jobs AS J
 WHERE J.MAX_SALARY>5000
