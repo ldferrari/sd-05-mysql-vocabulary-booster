@@ -1,13 +1,3 @@
-use hr;
-use w3schools;
-SELECT * FROM countries;
-SELECT * FROM departments;
-SELECT * FROM employees;
-SELECT * FROM job_history;
-SELECT * FROM jobs;
-SELECT * FROM locations;
-SELECT * FROM regions;
-
 SELECT CONCAT(A.first_name,' ', A.last_name) AS 'Nome completo funcionário 1',
 A.salary AS 'Salário funcionário 1',
 A.phone_number AS 'Telefone funcionário 1',
