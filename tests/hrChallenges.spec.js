@@ -6,6 +6,7 @@ describe('Desafios iniciais', () => {
   let sequelize;
 
   beforeAll(async () => {
+    jest.setTimeout(10000);
     const {
       MYSQL_USER,
       MYSQL_PASSWORD,
@@ -76,7 +77,7 @@ describe('Desafios iniciais', () => {
     });
   });
 
-  describe('Faça um relatório que mostra o **histórico de cargos das pessoas empregadas**', () => {
+  describe.only('Faça um relatório que mostra o **histórico de cargos das pessoas empregadas**', () => {
     it('Verifica o desafio 6', async () => {
       const challengeQuery = readFileSync('desafio6.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult6');
