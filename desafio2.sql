@@ -6,5 +6,4 @@ WHEN J.MAX_SALARY <= 30000 THEN 'Alto'
 ELSE 'Altíssimo'
 END
 AS 'Nível' from hr.jobs AS J
-WHERE J.MAX_SALARY>5000
 ORDER BY Cargo ASC;
