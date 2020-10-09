@@ -1,4 +1,5 @@
 -- desafio 14
+
 SELECT G.Country AS 'País' FROM (
 (SELECT S.country FROM w3schools.suppliers S)
 UNION
