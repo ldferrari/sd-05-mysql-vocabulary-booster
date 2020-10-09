@@ -63,7 +63,7 @@ describe('Desafios iniciais', () => {
     });
   });
 
-  describe('Exibe todos produtos **que já tiveram um pedido associado requerindo uma quantidade desse produto maior que 80**', () => {
+  describe.only('Exibe todos produtos **que já tiveram um pedido associado requerindo uma quantidade desse produto maior que 80**', () => {
     it('Verifica o desafio 13', async () => {
       const challengeQuery = readFileSync('desafio13.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult13');
