@@ -8,7 +8,7 @@
 -- --- e caso há empresas com o mesmo nome, ordene os resultados pela data do pedido em ordem crescente.
 
 SELECT cust.ContactName AS 'Nome de contato',
-ship.ShipperName AS 'Empresa que faz o envio',
+ship.ShipperName AS 'Empresa que fez o envio',
 ords.OrderDate AS 'Data do pedido'
 FROM w3schools.customers AS cust
 INNER JOIN w3schools.orders AS ords
