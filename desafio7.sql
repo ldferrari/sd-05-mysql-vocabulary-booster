@@ -8,12 +8,6 @@
 -- Os resultados devem estar ordenados pelo nome completo das pessoas empregadas em ordem alfabética.
 -- Em caso de empate no nome completo, ordene os resultados pela data de início que a pessoa iniciou seu cargo, em ordem crescente.
 
--- histórico de cargos: tabela job_history
--- HIRE_DATE OR START_DATE jan / fev / mar
--- 'Nome completo' + CAIXA ALTA + concat com espaço
--- 'Data de início' + START_DATE
--- 'Salário' SALARY
-
 SELECT UCASE(CONCAT(empl.FIRST_NAME, ' ', empl.LAST_NAME)) AS 'Nome completo',
 j-hst.START_DATE AS 'Data de início',
 empl.SALARY AS 'Salário'
