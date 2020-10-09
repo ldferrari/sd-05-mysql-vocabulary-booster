@@ -5,6 +5,6 @@ COUNT(B.Country) -1 AS 'Número de compatriotas'
 FROM w3schools.customers A
 INNER JOIN w3schools.customers B
 ON A.Country = B.Country
-GROUP BY `Nome`
+GROUP BY A.CustomerID
 HAVING `Número de compatriotas` > 0
 ORDER BY `Nome`;
