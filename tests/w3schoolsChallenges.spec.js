@@ -32,7 +32,7 @@ describe('Desafios iniciais', () => {
     sequelize.close();
   });
 
-  describe('Exibe todas as **pessoas consumidoras** cujos pedidos já foram enviados pelas empresas `"Speedy Express"` ou `"United Package"`', () => {
+  describe.only('Exibe todas as **pessoas consumidoras** cujos pedidos já foram enviados pelas empresas `"Speedy Express"` ou `"United Package"`', () => {
     it('Verifica o desafio 8', async () => {
       const challengeQuery = readFileSync('desafio8.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult8');
