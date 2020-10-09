@@ -1,7 +1,6 @@
--- USE hr;
+-- USE hr
 DELIMITER $$
-
-CREATE PROCEDURE buscar_media_por_cargo(nomeCargo)
+CREATE PROCEDURE hr.buscar_media_por_cargo(IN nomeCargo VARCHAR(50))
 BEGIN
   SELECT ROUND(AVG(SALARY), 2) AS 'Média salarial'
   FROM hr.jobs AS jobs
@@ -10,6 +9,4 @@ BEGIN
 END $$
 DELIMITER ;
 
-CALL buscar_media_por_cargo('Programmer');
-
--- does not pass on workbench
+-- CALL hr.buscar_media_por_cargo('Programmer');
