@@ -3,7 +3,7 @@
 -- DATA - job_history
 -- DEPARTAMENTO - departments (department_id presente na job_history);
 
-SELECT CONCAT(FIRST_NAME,' ', LAST_NAME) AS 'Nome Completo',
+SELECT CONCAT(FIRST_NAME,' ', LAST_NAME) AS 'Nome completo',
 JOB_TITLE AS 'Cargo',
 START_DATE AS 'Data de início do cargo',
 DEPARTMENT_NAME AS 'Departamento'
