@@ -1,3 +1,0 @@
-MYSQL_USER=root MYSQL_PASSWORD=123456789 HOSTNAME=localhost npm test -t hrChallenges.spec.js && sudo mysql -u root --password=123456789 < hr.sql
-
-MYSQL_USER=root MYSQL_PASSWORD=123456789 HOSTNAME=localhost npm test -t w3schoolsChallenges.spec.js && sudo mysql -u root --password=123456789 < w3schools.sql
