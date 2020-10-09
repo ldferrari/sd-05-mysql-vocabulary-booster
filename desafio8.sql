@@ -1,5 +1,5 @@
 -- desafio 8
-SELECT ContactName AS 'Nome de Contato',
+SELECT ContactName AS 'Nome de contato',
 ShipperName as 'Empresa que fez o envio',
 OrderDate as 'Data do pedido'
 FROM w3schools.customers C
