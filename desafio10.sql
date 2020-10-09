@@ -8,5 +8,5 @@ FROM w3schools.products P
 INNER JOIN  w3schools.order_details O
 ON O.ProductID = P.ProductID
 GROUP BY `Produto`
-HAVING `MÉDIA` > 20.00
+HAVING `Média` > 20.00
 ORDER BY 4, 1;
