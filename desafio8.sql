@@ -7,3 +7,13 @@
 -- Em caso de empate no nome de contato, ordene os resultados pelo nome da empresa que fez o envio do produto em ordem alfabética
 -- --- e caso há empresas com o mesmo nome, ordene os resultados pela data do pedido em ordem crescente.
 
+SELECT cust.ContactName AS 'Nome de contato',
+ship.ShipperName AS 'Empresa que faz o envio',
+ords.OrderDate AS 'Data do pedido'
+FROM w3schools.customers AS cust
+INNER JOIN w3schools.orders AS ords
+ON ords.CustomerID  = cust.CustomerID
+INNER JOIN w3schools.shippers AS ship
+ON ship.ShipperID = ords.ShipperID
+WHERE ship.ShipperID = 1 OR ship.ShipperID = 2
+ORDER BY 1, 2, 3;
