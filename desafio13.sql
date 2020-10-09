@@ -4,6 +4,8 @@
 -- A segunda coluna deve possuir o alias "Preço" e exibir o preço desse produto.
 -- Os resultados devem estar ordenados pelo nome do produto em ordem alfabética.
 
+-- comentário pra forçar reavaliação pois gitHub tá dando pane hoje
+
 SELECT p.ProductName AS 'Produto',
 p.Price AS 'Preço'
 FROM w3schools.products AS p,
