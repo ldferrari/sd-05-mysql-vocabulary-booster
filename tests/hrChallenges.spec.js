@@ -77,7 +77,7 @@ describe('Desafios iniciais', () => {
     });
   });
 
-  describe('Faça um relatório que mostra o **histórico de cargos das pessoas empregadas**', () => {
+  describe.only('Faça um relatório que mostra o **histórico de cargos das pessoas empregadas**', () => {
     it('Verifica o desafio 6', async () => {
       const challengeQuery = readFileSync('desafio6.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult6');
@@ -86,7 +86,7 @@ describe('Desafios iniciais', () => {
     });
   });
 
-  describe.only('Faça um relatório que mostra o **histórico de cargos das pessoas empregadas** que iniciaram seus cargos nos meses de janeiro, fevereiro ou março', () => {
+  describe('Faça um relatório que mostra o **histórico de cargos das pessoas empregadas** que iniciaram seus cargos nos meses de janeiro, fevereiro ou março', () => {
     it('Verifica o desafio 7', async () => {
       const challengeQuery = readFileSync('desafio7.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult7');

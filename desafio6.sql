@@ -13,7 +13,7 @@ JOB_TITLE AS 'Cargo', -- vem da tabela jobs
 START_DATE AS 'Data de início do cargo', -- vem da tabela job_history
 DEPARTMENT_NAME AS 'Departamento' -- vem da tabela departments
 FROM hr.employees AS empl -- importa tabela employees
-JOIN hr.job_history AS j_hst ON empl.EMPLOYEE_ID = j_hst.EMPLOYEE_ID -- relacionamento employees com job_history
-JOIN hr.jobs AS jbs ON j_hst.JOB_ID = jbs.JOB_ID -- relacionamento jobs com job_history
-JOIN hr.departments AS dpt ON dpt.DEPARTMENT_ID = j_hst.DEPARTMENT_ID -- relacionamento departments com job_history
+JOIN hr.job_history AS jhst ON empl.EMPLOYEE_ID = jhst.EMPLOYEE_ID -- relacionamento employees com job_history
+JOIN hr.jobs AS jbs ON jhst.JOB_ID = jbs.JOB_ID -- relacionamento jobs com job_history
+JOIN hr.departments AS dpt ON dpt.DEPARTMENT_ID = jhst.DEPARTMENT_ID -- relacionamento departments com job_history
 ORDER BY `Nome completo` DESC, Cargo;
