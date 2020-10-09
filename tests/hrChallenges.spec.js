@@ -1,25 +1,18 @@
 const { readFileSync } = require('fs');
 const { Sequelize } = require('sequelize');
-const Importer = require('mysql-import');
+const restoreDB = require('./restoreDB');
 
 describe('Desafios iniciais', () => {
   let sequelize;
 
   beforeAll(async () => {
-    jest.setTimeout(10000);
+    await restoreDB('hr');
+
     const {
       MYSQL_USER,
       MYSQL_PASSWORD,
       HOSTNAME
     } = process.env;
-
-    const importer = new Importer(
-      { user: MYSQL_USER, password: MYSQL_PASSWORD, host: HOSTNAME }
-    );
-
-    await importer.import('./hr.sql');
-
-    importer.disconnect();
 
     sequelize = new Sequelize(
       `mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@${HOSTNAME}:3306/hr`
@@ -30,6 +23,8 @@ describe('Desafios iniciais', () => {
     await sequelize.query('DROP DATABASE hr;', { type: 'RAW' });
 
     sequelize.close();
+
+    await restoreDB('hr');
   });
 
   describe('Exiba os países e indicando se cada um deles se encontra ou não na região formada pela Europa', () => {
@@ -77,7 +72,7 @@ describe('Desafios iniciais', () => {
     });
   });
 
-  describe.only('Faça um relatório que mostra o **histórico de cargos das pessoas empregadas**', () => {
+  describe('Faça um relatório que mostra o **histórico de cargos das pessoas empregadas**', () => {
     it('Verifica o desafio 6', async () => {
       const challengeQuery = readFileSync('desafio6.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult6');
