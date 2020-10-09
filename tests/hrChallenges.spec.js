@@ -90,7 +90,7 @@ describe('Desafios iniciais', () => {
     });
   });
 
-  describe('Faça um relatório que lista todas as pessoas funcionárias **que possuem o mesmo cargo**', () => {
+  describe.only('Faça um relatório que lista todas as pessoas funcionárias **que possuem o mesmo cargo**', () => {
     it('Verifica o desafio 12', async () => {
       const challengeQuery = readFileSync('desafio12.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult12');
