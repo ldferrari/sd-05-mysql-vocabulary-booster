@@ -15,4 +15,4 @@ a.SALARY AS 'Salário funcionário 2',
 a.PHONE_NUMBER AS 'Telefone funcionário 2'
 FROM hr.employees AS a, hr.employees AS b
 WHERE a.JOB_ID = b.JOB_ID AND a.EMPLOYEE_ID <> b.EMPLOYEE_ID
-ORDER BY `Salário funcionário 1`, `Salário funcionário 2`;
+ORDER BY `Nome completo funcionário 1`, `Nome completo funcionário 2`;
