@@ -3,7 +3,7 @@
 -- países distintos, em ordem alfabética, presentes nesse conjunto. Usando o banco w3schools como referência, monte
 -- uma query que exiba uma coluna, com o alias "País", que deve mostrar o nome do país.
 
-SELECT Country FROM w3schools.customers
+SELECT Country AS 'País' FROM w3schools.customers
 UNION
-SELECT Country FROM w3schools.suppliers
-ORDER BY Country LIMIT 5;
+SELECT Country AS 'País' FROM w3schools.suppliers
+ORDER BY `País` LIMIT 5;
