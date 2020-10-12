@@ -15,4 +15,3 @@ WHERE em.email = email
 ORDER BY 2, 3;
 END
 $$ DELIMITER ;
-
