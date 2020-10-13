@@ -8,5 +8,3 @@ INNER JOIN hr.jobs j ON jh.JOB_ID = j.JOB_ID
 INNER JOIN hr.employees e ON jh.EMPLOYEE_ID = e.EMPLOYEE_ID
 INNER JOIN hr.departments d ON jh.DEPARTMENT_ID = d.DEPARTMENT_ID
 ORDER BY 1 DESC, 2;
-
-
