@@ -1,24 +1,18 @@
 const { readFileSync } = require('fs');
 const { Sequelize } = require('sequelize');
-const Importer = require('mysql-import');
+const restoreDB = require('./restoreDB');
 
 describe('Desafios iniciais', () => {
   let sequelize;
 
   beforeAll(async () => {
+    await restoreDB('w3schools');
+
     const {
       MYSQL_USER,
       MYSQL_PASSWORD,
       HOSTNAME
     } = process.env;
-
-    const importer = new Importer(
-      { user: MYSQL_USER, password: MYSQL_PASSWORD, host: HOSTNAME }
-    );
-
-    await importer.import('./w3schools.sql');
-
-    importer.disconnect();
 
     sequelize = new Sequelize(
       `mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@${HOSTNAME}:3306/w3schools`
@@ -29,6 +23,8 @@ describe('Desafios iniciais', () => {
     await sequelize.query('DROP DATABASE w3schools;', { type: 'RAW' });
 
     sequelize.close();
+
+    await restoreDB('w3schools');
   });
 
   describe('Exibe todas as **pessoas consumidoras** cujos pedidos já foram enviados pelas empresas `"Speedy Express"` ou `"United Package"`', () => {
