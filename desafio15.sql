@@ -1,7 +1,7 @@
-DROP PROCEDURE IF EXISTS buscar_media_por_cargo;
+-- DROP PROCEDURE IF EXISTS buscar_media_por_cargo;
 DELIMITER $$
 CREATE PROCEDURE buscar_media_por_cargo
-(IN cargo VARCHAR(50))
+(IN cargo VARCHAR(100))
 BEGIN
 SELECT ROUND(AVG(E.SALARY),2)
 AS 'Média Salarial'
