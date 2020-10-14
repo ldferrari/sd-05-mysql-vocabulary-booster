@@ -1,3 +1,4 @@
+/*
 SELECT 
 CONCAT(E.FIRST_NAME, ' ', E.LAST_NAME) AS 'Nome completo', -- tabela employees
 J.JOB_TITLE AS 'Cargo', -- tabela jobs
@@ -18,3 +19,4 @@ J.JOB_TITLE;
 -- SELECT * FROM hr.employees;
 -- SELECT * FROM hr.departments;
 -- SELECT * FROM hr.job_history;
+*/
