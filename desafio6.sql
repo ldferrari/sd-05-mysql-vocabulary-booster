@@ -7,6 +7,3 @@ JOIN hr.job_history AS JH ON JH.EMPLOYEE_ID=E.EMPLOYEE_ID
 JOIN hr.jobs AS J ON JH.JOB_ID = J.JOB_ID
 JOIN hr.departments AS D ON D.DEPARTMENT_ID=JH.DEPARTMENT_ID
 ORDER BY `Nome completo` DESC,`Cargo`;
-
-SELECT * FROM hr.job_history WHERE EMPLOYEE_ID=122;
-SELECT * FROM hr.employees;
