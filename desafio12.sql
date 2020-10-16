@@ -1,9 +1,11 @@
-SELECT jobs.JOB_TITLE as "Cargo",
-ROUND(AVG(employees.salary),2) as 'Média salarial',
-CASE WHEN ROUND(AVG(employees.salary),2) between 2000 and 5800 then 'Júnior'
-WHEN ROUND(AVG(employees.salary),2) between 5801 and 7500 then 'Pleno'
-WHEN ROUND(AVG(employees.salary),2) between 7501 and 10500 then 'Sênior'
-ELSE 'CEO'
-end as "Senioridade"
-FROM employees INNER JOIN jobs ON employees.JOB_ID = jobs.JOB_ID GROUP BY `Cargo`
-ORDER BY `Média salarial`, JOB_TITLE ASC;
+-- Com base nisso, usando o banco hr como referência, monte uma query que exiba seis colunas:
+-- A primeira coluna deve possuir o alias "Nome completo funcionário 1" e exibir o nome completo da pessoa funcionária
+-- --- (não se esqueça do espaço entre o nome e o sobrenome).
+-- A segunda coluna deve possuir o alias "Salário funcionário 1" e exibir o salário dessa pessoa.
+-- A terceira coluna deve possuir o alias "Telefone funcionário 1" e exibir o número de telefone dessa pessoa.
+-- A quarta coluna deve possuir o alias "Nome completo funcionário 2" e exibir o nome completo da pessoa funcionária
+-- --- associada que possui o mesmo cargo (não se esqueça do espaço entre o nome e o sobrenome).
+-- A quinta coluna deve possuir o alias "Salário funcionário 2" e exibir o salário da pessoa funcionária associada que possui o mesmo cargo.
+-- A sexta coluna deve possuir o alias "Telefone funcionário 2" e exibir o número da pessoa funcionária associada que possui o mesmo cargo.
+-- Os resultados devem estar ordenados pela coluna "Nome completo funcionário 1" em ordem alfabética.
+-- Em caso de empate, os resultados devem ser ordenados pela coluna Nome completo funcionário 2" em ordem alfabética.

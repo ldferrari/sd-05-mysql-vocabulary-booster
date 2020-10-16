@@ -1,9 +1,6 @@
-SELECT jobs.JOB_TITLE as "Cargo",
-ROUND(AVG(employees.salary),2) as 'Média salarial',
-CASE WHEN ROUND(AVG(employees.salary),2) between 2000 and 5800 then 'Júnior'
-WHEN ROUND(AVG(employees.salary),2) between 5801 and 7500 then 'Pleno'
-WHEN ROUND(AVG(employees.salary),2) between 7501 and 10500 then 'Sênior'
-ELSE 'CEO'
-end as "Senioridade"
-FROM employees INNER JOIN jobs ON employees.JOB_ID = jobs.JOB_ID GROUP BY `Cargo`
-ORDER BY `Média salarial`, JOB_TITLE ASC;
+-- Exibe todos produtos que já tiveram um pedido associado requerindo uma quantidade desse produto maior que 80.
+-- Usando o banco w3schools como referência, monte uma query que exiba duas colunas:
+-- A primeira coluna deve possuir o alias "Produto" e exibir o nome do produto.
+-- A segunda coluna deve possuir o alias "Preço" e exibir o preço desse produto.
+-- Os resultados devem estar ordenados pelo nome do produto em ordem alfabética.
+-- comentário pra forçar reavaliação pois gitHub tá dando pane hoje

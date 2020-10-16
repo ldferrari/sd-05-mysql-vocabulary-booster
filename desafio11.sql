@@ -1,9 +1,6 @@
-SELECT jobs.JOB_TITLE as "Cargo",
-ROUND(AVG(employees.salary),2) as 'Média salarial',
-CASE WHEN ROUND(AVG(employees.salary),2) between 2000 and 5800 then 'Júnior'
-WHEN ROUND(AVG(employees.salary),2) between 5801 and 7500 then 'Pleno'
-WHEN ROUND(AVG(employees.salary),2) between 7501 and 10500 then 'Sênior'
-ELSE 'CEO'
-end as "Senioridade"
-FROM employees INNER JOIN jobs ON employees.JOB_ID = jobs.JOB_ID GROUP BY `Cargo`
-ORDER BY `Média salarial`, JOB_TITLE ASC;
+-- Exibe todas as pessoas clientes que possuem compatriotas, mostrando a quantidade de compatriotas para cada pessoa cliente.
+-- Usando o banco w3schools como referência, monte uma query que exiba três colunas:
+-- A primeira coluna deve possuir o alias "Nome" e exibir o nome de contato da pessoa cliente.
+-- A segunda coluna deve possuir o alias "País" e exibir o nome do país em que a pessoa reside.
+-- A terceira coluna deve possuir o alias "Número de compatriotas" e exibir o número de pessoas que moram no mesmo país.
+-- Os resultados devem estar ordenados pelo nome de contato da pessoa cliente em ordem alfabética.
