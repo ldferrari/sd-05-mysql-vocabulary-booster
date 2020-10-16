@@ -1,7 +1,6 @@
 SELECT jobs.JOB_TITLE as "Cargo",
 ROUND(AVG(employees.salary),2) as 'Média salarial',
-CASE
-WHEN ROUND(AVG(employees.salary),2) between 2000 and 5800 then 'Júnior'
+CASE WHEN ROUND(AVG(employees.salary),2) between 2000 and 5800 then 'Júnior'
 WHEN ROUND(AVG(employees.salary),2) between 5801 and 7500 then 'Pleno'
 WHEN ROUND(AVG(employees.salary),2) between 7501 and 10500 then 'Sênior'
 ELSE 'CEO'
