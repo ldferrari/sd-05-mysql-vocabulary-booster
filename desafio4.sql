@@ -9,7 +9,7 @@ ELSE 'CEO'
 END AS 'Senioridade'
 FROM hr.jobs AS jb
 JOIN
-hr.employees AS employee ON (jb.job_id = e.job_id)
+hr.employees AS employee ON (jb.job_id = employee.job_id)
 GROUP BY
 jb.job_title,
 'Média salarial',

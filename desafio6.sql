@@ -6,7 +6,7 @@ depart.department_name AS 'Departamento'
 FROM hr.employees AS employee
 JOIN
 hr.job_history AS jbh
-ON (jhb.employee_id = emp.employee_id)
+ON (jbh.employee_Id = employee.employee_id)
 JOIN
 hr.departments AS depart
 ON (jbh.department_id = depart.department_id)

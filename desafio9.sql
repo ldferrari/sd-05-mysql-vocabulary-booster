@@ -4,6 +4,6 @@ count(ord.EmployeeID) as 'Total de pedidos'
 FROM w3schools.employees as employee
 JOIN
 w3schools.orders as ord	
-ON(ord.EmlpoyeeID = emp.EmployeeID)
+ON(ord.EmployeeID = emp.EmployeeID)
 GROUP BY ord.EmlpoyeeID
-ORDER BY count(ord.EmlpoyeeID);
+ORDER BY count(ord.EmployeeID);

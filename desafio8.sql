@@ -1,6 +1,6 @@
 SELECT
 customer.ContactName as 'Nome de contato',
-ship.ShipperName as 'Empreza que fez o envio',
+ship.ShipperName as 'Empresa que fez o envio',
 ord.OrderDate as 'Data do pedido'
 FROM w3schools.customers as customer
 JOIN
