@@ -1,4 +1,4 @@
--- DROP PROCEDURE IF EXISTS buscar_media_por_cargo;
+USE hr;
 DELIMITER $$
 CREATE PROCEDURE buscar_media_por_cargo
 (IN cargo VARCHAR(100))
