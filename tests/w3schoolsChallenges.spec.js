@@ -7,6 +7,7 @@ describe('Desafios iniciais', () => {
 
   beforeAll(async () => {
     await restoreDB('w3schools');
+    jest.setTimeout(10000);
 
     const {
       MYSQL_USER,
