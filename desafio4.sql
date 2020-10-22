@@ -8,5 +8,5 @@ END AS 'Senioridade'
 FROM hr.employees
 INNER JOIN hr.jobs
 ON job_id = job_id
-GROUP BY job_id
+GROUP BY job_title
 ORDER BY AVG(salary) ASC, job_title ASC;
