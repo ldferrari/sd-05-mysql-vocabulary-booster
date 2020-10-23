@@ -7,6 +7,6 @@ WHEN AVG(employees.salary) > 10500 THEN 'CEO'
 END AS Senioridade
 FROM hr.jobs
 INNER JOIN hr.employees
-ON jobs.job_id = employess.job_id
+ON employees.job_id = jobs.job_id
 GROUP BY jobs.job_title
 ORDER BY AVG('Média salarial'), Cargo;
