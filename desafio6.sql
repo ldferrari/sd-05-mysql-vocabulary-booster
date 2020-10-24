@@ -2,7 +2,7 @@ SELECT
 CONCAT(first_name, ' ', last_name) AS 'Nome completo',
 jobs.job_title AS Cargo,
 job_history.start_date AS 'Data de início do cargo',
-departments.department_id AS 'Departamento'
+departments.department_name AS 'Departamento'
 FROM hr.employees
 JOIN -- talvez eu poderia fazer um único JOIN
 hr.job_history
