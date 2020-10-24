@@ -1,20 +1,12 @@
--- Desempenho superior ao inner join apesar do inner ser menos verboso
-SELECT
-(
-SELECT CONCAT(hre.first_name,' ', hre.last_name)
-FROM hr.employees AS hre
-WHERE hre.employee_id = hrh.employee_id
-) AS 'Nome Completo',
-(
-SELECT hrj.job_title 
-FROM hr.jobs AS hrj 
-WHERE hrj.job_id = hrh.job_id
-) AS 'Cargo',
+SELECT CONCAT(hre.first_name,' ',hre.last_name) AS 'Nome completo',
+hrj.job_title AS 'Cargo',
 hrh.start_date AS 'Data de início do cargo',
-(
-SELECT hrd.department_name
-FROM hr.departments AS hrd
-WHERE hrd.department_id = hrh.department_id
-) AS 'Departamento'
+hrd.department_name AS 'Departamento'
 FROM hr.job_history AS hrh
-ORDER BY 1 DESC, 2 ASC;
+INNER JOIN hr.employees AS hre
+ON hrh.employee_id = hre.employee_id
+INNER JOIN hr.jobs AS hrj
+ON hrh.job_id = hrj.job_id
+INNER JOIN hr.departments AS hrd
+ON hrh.department_id = hrd.department_id
+ORDER BY 1 DESC, 2 ;
