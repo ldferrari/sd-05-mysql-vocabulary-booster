@@ -15,4 +15,3 @@ hr.jobs
 ON jobs.job_id = job_history.job_id
 ORDER BY
 `Nome completo` DESC, Cargo ASC;
-
