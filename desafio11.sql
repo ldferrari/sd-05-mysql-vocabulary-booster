@@ -1,4 +1,4 @@
-SELECT A.CustomerName AS 'Nome',
+SELECT A.ContactName AS 'Nome',
 A.Country AS 'País',
 (
 SELECT COUNT(B.Country)

@@ -1,10 +1,10 @@
 -- Desempenho superior ao inner join apesar do inner ser menos verboso
 SELECT
 (
-SELECT CONCAT(hre.first_name,' ', hre.last_name) AS 'Nome Completo'
+SELECT CONCAT(hre.first_name,' ', hre.last_name)
 FROM hr.employees AS hre
 WHERE hre.employee_id = hrh.employee_id
-),
+) AS 'Nome Completo',
 (
 SELECT hrj.job_title 
 FROM hr.jobs AS hrj 
