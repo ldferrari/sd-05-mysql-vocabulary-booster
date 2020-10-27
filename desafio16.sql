@@ -1,17 +1,22 @@
-use hr,
+use hr;
+
+-- refatorei conforme https://app.betrybe.com/course/back-end/sql/procedures_and_subqueries
 
 DELIMITER $$
 
-CREATE FUNCTION buscar_quantidade_de_empregos_por_funcionario('presentes em seu histórico' VARCHAR(100))
-IF RETURNS = true
-{
+CREATE FUNCTION `buscar_quantidade_de_empregos_por_funcionario`(email int VARCHAR(100))
+RETURNS INTEGER READS SQL DATA
 BEGIN
-SET hr.email= 'NKOCHHAR'
-FROM hr.employees
-END;
-}
+DECLARE total_jobs AS t INT;
+SELECT COUNT(*)
+FROM hr.job_history AS jh
+INNER JOIN hr.employees AS e
+ON jh_employee_id = e.employee_id AND email = e.email
+INTO t;
+RETURN t;
+END
 
-CALL buscar_quantidade_de_empregos_por_funcionario = 2
+SELECT buscar_quantidade_de_empregos_por_funcionario('NKOCHHAR');
 
 DELIMITER ;
 
