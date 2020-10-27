@@ -7,4 +7,5 @@ FROM w3schools.products AS p
 INNER JOIN w3schools.order_details AS o
 ON p.productid = o.productid
 GROUP BY p.productname
-ORDER BY AVG(o.quantity), p.productname;
+HAVING `Média`
+ORDER BY `Média`, p.productname;
