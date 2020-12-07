@@ -1,4 +1,4 @@
-SELECT JOB_TITLE AS "CARGO",
+SELECT JOB_TITLE AS Cargo,
 (CASE
 WHEN hr.jobs.MAX_SALARY <= 10000 THEN "Baixo"
 WHEN hr.jobs.MAX_SALARY <= 20000 THEN "Médio"
@@ -7,4 +7,4 @@ ELSE "Altíssimo"
 END
 ) AS "Nível"
 FROM hr.jobs
-ORDER BY "CARGO";
+ORDER BY Cargo;
