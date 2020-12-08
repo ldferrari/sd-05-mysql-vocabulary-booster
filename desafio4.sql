@@ -8,4 +8,5 @@ END AS 'Senioridade'
 FROM hr.jobs AS j
 INNER JOIN hr.employees AS e ON
 j.JOB_ID = e.JOB_ID
-GROUP BY j.JOB_TITLE;
+GROUP BY j.JOB_TITLE
+ORDER BY 'Senioridade', 'Cargo' ASC;
