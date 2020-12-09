@@ -5,4 +5,5 @@ FROM w3schools.customers AS c
 INNER JOIN w3schools.customers AS c2
 ON c.Country = c2.Country
 GROUP BY c.CustomerID
+HAVING COUNT(C.CustomerID) -1 >= 1
 ORDER BY c.ContactName;
